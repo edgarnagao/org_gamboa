@@ -1,0 +1,2 @@
+C:\Users\lenovo\Documents\Visual Studio 2013\Projects\Organzador\Organzador\bin\x86\Release\Organzador.exe.config
+C:\Users\lenovo\Documents\Visual Studio 2013\Projects\Organzador\Organzador\obj\x86\Release\Organzador.vbproj.ResolveComReference.cache
