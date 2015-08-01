@@ -26,6 +26,7 @@ Partial Class Form1
         Me.clientButton = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.btnGod = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'clientButton
@@ -46,10 +47,17 @@ Partial Class Form1
         Me.Button3.Name = "Button3"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'btnGod
+        '
+        resources.ApplyResources(Me.btnGod, "btnGod")
+        Me.btnGod.Name = "btnGod"
+        Me.btnGod.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         resources.ApplyResources(Me, "$this")
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.btnGod)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.clientButton)
@@ -61,5 +69,5 @@ Partial Class Form1
     Friend WithEvents clientButton As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
-
+    Friend WithEvents btnGod As Button
 End Class
