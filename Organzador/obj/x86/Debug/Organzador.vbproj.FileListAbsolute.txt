@@ -1,0 +1,16 @@
+C:\Users\lenovo\Documents\Visual Studio 2013\Projects\Organzador\Organzador\bin\x86\Debug\Organzador.exe.config
+C:\Users\lenovo\Documents\Visual Studio 2013\Projects\Organzador\Organzador\obj\x86\Debug\Organzador.vbproj.ResolveComReference.cache
+C:\Users\lenovo\Documents\Visual Studio 2013\Projects\Organzador\Organzador\bin\x86\Debug\Organzador.exe
+C:\Users\lenovo\Documents\Visual Studio 2013\Projects\Organzador\Organzador\bin\x86\Debug\Organzador.pdb
+C:\Users\lenovo\Documents\Visual Studio 2013\Projects\Organzador\Organzador\bin\x86\Debug\Organzador.xml
+C:\Users\lenovo\Documents\Visual Studio 2013\Projects\Organzador\Organzador\obj\x86\Debug\Organzador.Form1.resources
+C:\Users\lenovo\Documents\Visual Studio 2013\Projects\Organzador\Organzador\obj\x86\Debug\Organzador.Form2.resources
+C:\Users\lenovo\Documents\Visual Studio 2013\Projects\Organzador\Organzador\obj\x86\Debug\Organzador.Resources.resources
+C:\Users\lenovo\Documents\Visual Studio 2013\Projects\Organzador\Organzador\obj\x86\Debug\Organzador.vbproj.GenerateResource.Cache
+C:\Users\lenovo\Documents\Visual Studio 2013\Projects\Organzador\Organzador\obj\x86\Debug\Organzador.exe
+C:\Users\lenovo\Documents\Visual Studio 2013\Projects\Organzador\Organzador\obj\x86\Debug\Organzador.xml
+C:\Users\lenovo\Documents\Visual Studio 2013\Projects\Organzador\Organzador\obj\x86\Debug\Organzador.pdb
+C:\Users\lenovo\Documents\Visual Studio 2013\Projects\Organzador\Organzador\bin\x86\Debug\yo-NG\Organzador.resources.dll
+C:\Users\lenovo\Documents\Visual Studio 2013\Projects\Organzador\Organzador\obj\x86\Debug\Organzador.Form1.yo-NG.resources
+C:\Users\lenovo\Documents\Visual Studio 2013\Projects\Organzador\Organzador\obj\x86\Debug\yo-NG\Organzador.resources.dll
+C:\Users\lenovo\Documents\Visual Studio 2013\Projects\Organzador\Organzador\obj\x86\Debug\Organzador.UserControl1.resources
