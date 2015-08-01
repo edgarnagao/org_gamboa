@@ -121,6 +121,9 @@
   <data name="clientButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>228, 232</value>
   </data>
+  <data name="clientButton.Text" xml:space="preserve">
+    <value>Cliente</value>
+  </data>
   <data name="Button2.Location" type="System.Drawing.Point, System.Drawing">
     <value>467, 232</value>
   </data>
