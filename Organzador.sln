@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Organzador", "Organzador\Organzador.vbproj", "{0762430A-472E-41EE-9FCB-73DB15EB4A10}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Organzador", "Organzador.vbproj", "{0762430A-472E-41EE-9FCB-73DB15EB4A10}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
