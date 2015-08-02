@@ -23,7 +23,7 @@ Public Class Form2
         Call load_name()
 
         'Seleciona 
-        idclient.Text = "Seleciona"
+        idCliente.Text = "Seleciona"
 
         'Selecciona to nombre dropdown
         buscarNombre.Text = "Seleciona"
@@ -40,12 +40,12 @@ Public Class Form2
 
         'Validate if the fields are empty
         If idBox.Text = "" Then
-            MsgBox("Has click en 'Nuevo' para agregar cliente", MsgBoxStyle.Exclamation = MsgBoxStyle.OkOnly = True, "Nuevo Cliente")
+            MsgBox("Has click en 'Nuevo' para agregar Clientee", MsgBoxStyle.Exclamation = MsgBoxStyle.OkOnly = True, "Nuevo Clientee")
             Exit Sub
         End If
 
         'Sub to writ in the data base the new reg or the edited 
-        If idBox.Text <> " " And idclient.Text = "Selecciona" And buscarNombre.Text = "Selecciona" Then
+        If idBox.Text <> " " And idCliente.Text = "Selecciona" And buscarNombre.Text = "Selecciona" Then
             Call agegar_info()
         Else
             Call add_edit()
@@ -58,7 +58,7 @@ Public Class Form2
         Call desactivate_fields()
 
         'Put the selectiona 
-        idclient.Text = "Seleciona"
+        idCliente.Text = "Seleciona"
 
         'Put seleciona en dorpwdown
         buscarNombre.Text = "Seleciona"
@@ -70,7 +70,7 @@ Public Class Form2
         Call load_name()
 
         'Enababled the id dropdown
-        idclient.Enabled = True
+        idCliente.Enabled = True
 
         'Enabled the name dorpdown
         buscarNombre.Enabled = True
@@ -90,13 +90,13 @@ Public Class Form2
         Call last_Id()
 
         'Desactivate the idbox
-        idclient.Enabled = False
+        idCliente.Enabled = False
 
         'Desactivate the name dorp down
         buscarNombre.Enabled = False
 
         'Reset the dropdowns
-        idclient.Text = "Selecciona"
+        idCliente.Text = "Selecciona"
         buscarNombre.Text = "Selecciona"
 
         'Split the date
@@ -111,7 +111,7 @@ Public Class Form2
     Private Sub editarButton_Click(sender As Object, e As EventArgs) Handles editarButton.Click
 
         'If not Id send message to add one
-        If idclient.Text = "Seleciona" And buscarNombre.Text = "Seleciona" Then
+        If idCliente.Text = "Seleciona" And buscarNombre.Text = "Seleciona" Then
             MsgBox("Se tiene que selecionar una ID para editar", MsgBoxStyle.Exclamation = MsgBoxStyle.OkOnly = True, "Sin ID")
             Exit Sub
         End If
@@ -137,10 +137,10 @@ Public Class Form2
         fechaBox.Text = ""
 
         'Eabled the id dropdown for search
-        idclient.Enabled = True
+        idCliente.Enabled = True
 
         'put 'Seleciona' in the dropdown
-        idclient.Text = "Selecciona"
+        idCliente.Text = "Selecciona"
 
         'Eabled the id dropdown for search
         buscarNombre.Enabled = True
@@ -162,13 +162,13 @@ Public Class Form2
         Dim intResponse As Integer
 
         'If not Id send message to add one
-        If idclient.Text = "Seleciona" And buscarNombre.Text = "Seleciona" Then
-            MsgBox("Se tiene que selecionar una ID o Nombre para eliminar el cliente", MsgBoxStyle.Exclamation = MsgBoxStyle.OkOnly = True, "Ningun cliente selecionado")
+        If idCliente.Text = "Seleciona" And buscarNombre.Text = "Seleciona" Then
+            MsgBox("Se tiene que selecionar una ID o Nombre para eliminar el Clientee", MsgBoxStyle.Exclamation = MsgBoxStyle.OkOnly = True, "Ningun Clientee selecionado")
             Exit Sub
         End If
 
-        'Ask to make sure the user want to elimante the 'cliente'
-        intResponse = MsgBox("Estas seguro que quieres eliminar el cliente", MsgBoxStyle.OkCancel + MsgBoxStyle.Question, "Eliminar Cliente")
+        'Ask to make sure the user want to elimante the 'Clientee'
+        intResponse = MsgBox("Estas seguro que quieres eliminar el Clientee", MsgBoxStyle.OkCancel + MsgBoxStyle.Question, "Eliminar Clientee")
 
         If Not intResponse = MsgBoxResult.Ok Then
             Exit Sub
@@ -183,7 +183,7 @@ Public Class Form2
         command.Connection = con
 
         'Query to insert data
-        command.CommandText = "DELETE from client WHERE serial_id =  '" & idBox.Text & "';"
+        command.CommandText = "DELETE From Client WHERE serial_id =  '" & idBox.Text & "';"
         command.ExecuteNonQuery()
 
         'End Conection
@@ -202,12 +202,12 @@ Public Class Form2
         fechaBox.Text = ""
 
         'Eabled the id dropdown for search
-        idclient.Enabled = True
+        idCliente.Enabled = True
 
         'Enabled the nombre dorpdown
         buscarNombre.Enabled = True
 
-        idclient.Text = "Selecciona"
+        idCliente.Text = "Selecciona"
 
         buscarNombre.Text = "Selecciona"
 
@@ -226,11 +226,11 @@ Public Class Form2
 
 
     'Buscar por ID en Base de Datos
-    Private Sub idclient_SelectedIndexChanged(sender As Object, e As EventArgs) Handles idclient.SelectedIndexChanged
+    Private Sub idCliente_SelectedIndexChanged(sender As Object, e As EventArgs) Handles idCliente.SelectedIndexChanged
 
         Call search_by_id()
 
-        'After select and Id desactivate the Nombre and cliente
+        'After select and Id desactivate the Nombre and Clientee
         buscarNombre.Enabled = False
 
     End Sub
@@ -240,8 +240,8 @@ Public Class Form2
 
         Call search_by_name()
 
-        'After select nombre desactivate the Nombre and cliente
-        idclient.Enabled = False
+        'After select nombre desactivate the Nombre and Clientee
+        idCliente.Enabled = False
 
     End Sub
 
@@ -274,7 +274,7 @@ Public Class Form2
         End If
 
         'Query to insert data
-        command.CommandText = "INSERT INTO client (serial_id, first_name, last_name, street_addr, neighborhood, zip, joining_date, phone, mobile, email, state, city, company_name, rfc) VALUES ('" & idBox.Text & "','" & nombreBox.Text & "','" & apellidosBox.Text & "','" & calleBox.Text & "','" & coloniaBox.Text & "','" & codigoBox.Text & "','" & fechaBox.Text & "','" & telefonoBox.Text & "','" & celularBox.Text & "','" & correoClienteBox.Text & "', '" & estadoBox.Text & "', '" & ciudadBox.Text & "','" & empresaBox.Text & "', '" & rfcBox.Text & "'  );"
+        command.CommandText = "INSERT INTO Client (serial_id, first_name, last_name, street_addr, neighborhood, zip, joining_date, phone, mobile, email, state, city, company_name, rfc) VALUES ('" & idBox.Text & "','" & nombreBox.Text & "','" & apellidosBox.Text & "','" & calleBox.Text & "','" & coloniaBox.Text & "','" & codigoBox.Text & "','" & fechaBox.Text & "','" & telefonoBox.Text & "','" & celularBox.Text & "','" & correoClienteeBox.Text & "', '" & estadoBox.Text & "', '" & ciudadBox.Text & "','" & empresaBox.Text & "', '" & rfcBox.Text & "'  );"
         command.ExecuteNonQuery()
 
         'End Conection
@@ -295,14 +295,14 @@ Public Class Form2
         command.Connection = con
 
         'Query to insert data
-        command.CommandText = "Select * From gamboadb.client"
+        command.CommandText = "Select * From gamboadb.Client"
         READER = command.ExecuteReader
 
         While READER.Read
 
             Dim id = READER("serial_id").ToString
 
-            idclient.Items.Add(id)
+            idCliente.Items.Add(id)
 
         End While
 
@@ -323,7 +323,7 @@ Public Class Form2
         fechaBox.Enabled = False
         telefonoBox.Enabled = False
         celularBox.Enabled = False
-        correoClienteBox.Enabled = False
+        correoClienteeBox.Enabled = False
         estadoBox.Enabled = False
         ciudadBox.Enabled = False
         empresaBox.Enabled = False
@@ -345,7 +345,7 @@ Public Class Form2
         command.Connection = con
 
         'Query to insert data
-        command.CommandText = "Select serial_id From gamboadb.client order by serial_id DESC Limit 1"
+        command.CommandText = "Select serial_id From gamboadb.Client order by serial_id DESC Limit 1"
         READER = command.ExecuteReader
 
         While READER.Read
@@ -379,7 +379,7 @@ Public Class Form2
         fechaBox.Enabled = True
         telefonoBox.Enabled = True
         celularBox.Enabled = True
-        correoClienteBox.Enabled = True
+        correoClienteeBox.Enabled = True
         estadoBox.Enabled = True
         ciudadBox.Enabled = True
         empresaBox.Enabled = True
@@ -399,14 +399,14 @@ Public Class Form2
         fechaBox.Text = ""
         telefonoBox.Text = ""
         celularBox.Text = ""
-        correoClienteBox.Text = ""
+        correoClienteeBox.Text = ""
         estadoBox.Text = ""
         ciudadBox.Text = ""
         empresaBox.Text = ""
         rfcBox.Text = ""
 
         'Clear the id dropdown
-        idclient.Items.Clear()
+        idCliente.Items.Clear()
 
         'Clear the nombre dropdown
         buscarNombre.Items.Clear()
@@ -426,7 +426,7 @@ Public Class Form2
         command.Connection = con
 
         'Query to insert data
-        command.CommandText = "Select * From client where serial_id = '" & idclient.Text & "';"
+        command.CommandText = "Select * From Client where serial_id = '" & idCliente.Text & "';"
         READER = command.ExecuteReader
 
         While READER.Read
@@ -453,7 +453,7 @@ Public Class Form2
             calleBox.Text = calle
             coloniaBox.Text = colValue
             fechaBox.Text = fecha
-            correoClienteBox.Text = correo
+            correoClienteeBox.Text = correo
             estadoBox.Text = estado
             ciudadBox.Text = ciudad
             empresaBox.Text = empresa
@@ -499,8 +499,21 @@ Public Class Form2
         'Command conection
         command.Connection = con
 
+        'send Null insted of empty streing
+        If codigoBox.Text = "" Then
+            codigoBox.Text = vbNull
+        End If
+
+        If telefonoBox.Text = "" Then
+            telefonoBox.Text = vbNull
+        End If
+
+        If celularBox.Text = "" Then
+            celularBox.Text = vbNull
+        End If
+
         'Query to insert data
-        command.CommandText = "UPDATE client  SET first_name = '" & nombreBox.Text & "', last_name = '" & apellidosBox.Text & "' , street_addr = '" & calleBox.Text & "', neighborhood = '" & coloniaBox.Text & "', zip = '" & codigoBox.Text & "', joining_date = '" & fechaBox.Text & "', phone = '" & telefonoBox.Text & "' , mobile = '" & celularBox.Text & "' , email = '" & correoClienteBox.Text & "', state = '" & estadoBox.Text & "', city = '" & ciudadBox.Text & "', company_name = '" & empresaBox.Text & "', rfc = '" & rfcBox.Text & "'   where serial_id = '" & idBox.Text & "'  "
+        command.CommandText = "UPDATE Client  SET first_name = '" & nombreBox.Text & "', last_name = '" & apellidosBox.Text & "' , street_addr = '" & calleBox.Text & "', neighborhood = '" & coloniaBox.Text & "', zip = '" & codigoBox.Text & "', joining_date = '" & fechaBox.Text & "', phone = '" & telefonoBox.Text & "' , mobile = '" & celularBox.Text & "' , email = '" & correoClienteeBox.Text & "', state = '" & estadoBox.Text & "', city = '" & ciudadBox.Text & "', company_name = '" & empresaBox.Text & "', rfc = '" & rfcBox.Text & "'   where serial_id = '" & idBox.Text & "'  "
         command.ExecuteNonQuery()
 
         'End Conection
@@ -523,7 +536,7 @@ Public Class Form2
         command.Connection = con
 
         'Query to insert data
-        command.CommandText = "Select * From gamboadb.client"
+        command.CommandText = "Select * From gamboadb.Client"
         READER = command.ExecuteReader
 
         While READER.Read
@@ -557,7 +570,7 @@ Public Class Form2
         nombresValue = Split(buscarNombre.Text, "  ")
 
         'Query to insert data
-        command.CommandText = "Select * From client where first_name = '" & nombresValue(0) & "' and last_name = '" & nombresValue(1) & "' "
+        command.CommandText = "Select * From Client where first_name = '" & nombresValue(0) & "' and last_name = '" & nombresValue(1) & "' "
         READER = command.ExecuteReader
 
         While READER.Read
@@ -584,7 +597,7 @@ Public Class Form2
             calleBox.Text = calle
             coloniaBox.Text = colValue
             fechaBox.Text = fecha
-            correoClienteBox.Text = correo
+            correoClienteeBox.Text = correo
             estadoBox.Text = estado
             ciudadBox.Text = ciudad
             empresaBox.Text = empresa
@@ -625,8 +638,8 @@ Public Class Form2
     End Sub
 
 
-   
-   
+
+
 End Class
 
 

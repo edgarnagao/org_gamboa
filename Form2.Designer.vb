@@ -23,11 +23,11 @@ Partial Class Form2
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.idclient = New System.Windows.Forms.ComboBox()
+        Me.idCliente = New System.Windows.Forms.ComboBox()
         Me.agregarButton = New System.Windows.Forms.Button()
-        Me.clientBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ClienteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.gamboadbDataSet = New Organzador.gamboadbDataSet()
-        Me.clientTableAdapter = New Organzador.gamboadbDataSetTableAdapters.clientTableAdapter()
+        Me.ClienteTableAdapter = New Organzador.gamboadbDataSetTableAdapters.ClienteTableAdapter()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.editarButton = New System.Windows.Forms.Button()
         Me.cancelarButton = New System.Windows.Forms.Button()
@@ -43,7 +43,7 @@ Partial Class Form2
         Me.Label6 = New System.Windows.Forms.Label()
         Me.codigoBox = New System.Windows.Forms.TextBox()
         Me.idBox = New System.Windows.Forms.TextBox()
-        Me.groupclient = New System.Windows.Forms.GroupBox()
+        Me.groupCliente = New System.Windows.Forms.GroupBox()
         Me.rfcBox = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -53,7 +53,7 @@ Partial Class Form2
         Me.Label13 = New System.Windows.Forms.Label()
         Me.estadoBox = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.correoClienteBox = New System.Windows.Forms.TextBox()
+        Me.correoClienteeBox = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.celularBox = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -65,18 +65,18 @@ Partial Class Form2
         Me.buscarNombre = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.cotizacionButton = New System.Windows.Forms.Button()
-        CType(Me.clientBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gamboadbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.groupclient.SuspendLayout()
+        Me.groupCliente.SuspendLayout()
         Me.SuspendLayout()
         '
-        'idclient
+        'idCliente
         '
-        Me.idclient.FormattingEnabled = True
-        Me.idclient.Location = New System.Drawing.Point(713, 75)
-        Me.idclient.Name = "idclient"
-        Me.idclient.Size = New System.Drawing.Size(69, 21)
-        Me.idclient.TabIndex = 0
+        Me.idCliente.FormattingEnabled = True
+        Me.idCliente.Location = New System.Drawing.Point(713, 75)
+        Me.idCliente.Name = "idCliente"
+        Me.idCliente.Size = New System.Drawing.Size(69, 21)
+        Me.idCliente.TabIndex = 0
         '
         'agregarButton
         '
@@ -87,19 +87,19 @@ Partial Class Form2
         Me.agregarButton.Text = "Agregar"
         Me.agregarButton.UseVisualStyleBackColor = True
         '
-        'clientBindingSource
+        'ClienteBindingSource
         '
-        Me.clientBindingSource.DataMember = "client"
-        Me.clientBindingSource.DataSource = Me.gamboadbDataSet
+        Me.ClienteBindingSource.DataMember = "Cliente"
+        Me.ClienteBindingSource.DataSource = Me.gamboadbDataSet
         '
         'gamboadbDataSet
         '
         Me.gamboadbDataSet.DataSetName = "gamboadbDataSet"
         Me.gamboadbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'clientTableAdapter
+        'ClienteTableAdapter
         '
-        Me.clientTableAdapter.ClearBeforeFill = True
+        Me.ClienteTableAdapter.ClearBeforeFill = True
         '
         'Label7
         '
@@ -149,7 +149,7 @@ Partial Class Form2
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(53, 13)
         Me.Label1.TabIndex = 3
-        Me.Label1.Text = "ID Cliente"
+        Me.Label1.Text = "ID Clientee"
         '
         'Label2
         '
@@ -224,42 +224,42 @@ Partial Class Form2
         Me.idBox.Size = New System.Drawing.Size(64, 20)
         Me.idBox.TabIndex = 16
         '
-        'groupclient
+        'groupCliente
         '
-        Me.groupclient.Controls.Add(Me.rfcBox)
-        Me.groupclient.Controls.Add(Me.Label16)
-        Me.groupclient.Controls.Add(Me.Label15)
-        Me.groupclient.Controls.Add(Me.empresaBox)
-        Me.groupclient.Controls.Add(Me.Label14)
-        Me.groupclient.Controls.Add(Me.ciudadBox)
-        Me.groupclient.Controls.Add(Me.Label13)
-        Me.groupclient.Controls.Add(Me.estadoBox)
-        Me.groupclient.Controls.Add(Me.Label12)
-        Me.groupclient.Controls.Add(Me.correoClienteBox)
-        Me.groupclient.Controls.Add(Me.Label11)
-        Me.groupclient.Controls.Add(Me.celularBox)
-        Me.groupclient.Controls.Add(Me.Label10)
-        Me.groupclient.Controls.Add(Me.telefonoBox)
-        Me.groupclient.Controls.Add(Me.Label8)
-        Me.groupclient.Controls.Add(Me.idBox)
-        Me.groupclient.Controls.Add(Me.codigoBox)
-        Me.groupclient.Controls.Add(Me.fechaBox)
-        Me.groupclient.Controls.Add(Me.Label6)
-        Me.groupclient.Controls.Add(Me.coloniaBox)
-        Me.groupclient.Controls.Add(Me.Label5)
-        Me.groupclient.Controls.Add(Me.calleBox)
-        Me.groupclient.Controls.Add(Me.Label4)
-        Me.groupclient.Controls.Add(Me.Label3)
-        Me.groupclient.Controls.Add(Me.Label2)
-        Me.groupclient.Controls.Add(Me.Label1)
-        Me.groupclient.Controls.Add(Me.apellidosBox)
-        Me.groupclient.Controls.Add(Me.nombreBox)
-        Me.groupclient.Location = New System.Drawing.Point(42, 30)
-        Me.groupclient.Name = "groupclient"
-        Me.groupclient.Size = New System.Drawing.Size(662, 350)
-        Me.groupclient.TabIndex = 20
-        Me.groupclient.TabStop = False
-        Me.groupclient.Text = "Informacion de Cliente"
+        Me.groupCliente.Controls.Add(Me.rfcBox)
+        Me.groupCliente.Controls.Add(Me.Label16)
+        Me.groupCliente.Controls.Add(Me.Label15)
+        Me.groupCliente.Controls.Add(Me.empresaBox)
+        Me.groupCliente.Controls.Add(Me.Label14)
+        Me.groupCliente.Controls.Add(Me.ciudadBox)
+        Me.groupCliente.Controls.Add(Me.Label13)
+        Me.groupCliente.Controls.Add(Me.estadoBox)
+        Me.groupCliente.Controls.Add(Me.Label12)
+        Me.groupCliente.Controls.Add(Me.correoClienteeBox)
+        Me.groupCliente.Controls.Add(Me.Label11)
+        Me.groupCliente.Controls.Add(Me.celularBox)
+        Me.groupCliente.Controls.Add(Me.Label10)
+        Me.groupCliente.Controls.Add(Me.telefonoBox)
+        Me.groupCliente.Controls.Add(Me.Label8)
+        Me.groupCliente.Controls.Add(Me.idBox)
+        Me.groupCliente.Controls.Add(Me.codigoBox)
+        Me.groupCliente.Controls.Add(Me.fechaBox)
+        Me.groupCliente.Controls.Add(Me.Label6)
+        Me.groupCliente.Controls.Add(Me.coloniaBox)
+        Me.groupCliente.Controls.Add(Me.Label5)
+        Me.groupCliente.Controls.Add(Me.calleBox)
+        Me.groupCliente.Controls.Add(Me.Label4)
+        Me.groupCliente.Controls.Add(Me.Label3)
+        Me.groupCliente.Controls.Add(Me.Label2)
+        Me.groupCliente.Controls.Add(Me.Label1)
+        Me.groupCliente.Controls.Add(Me.apellidosBox)
+        Me.groupCliente.Controls.Add(Me.nombreBox)
+        Me.groupCliente.Location = New System.Drawing.Point(42, 30)
+        Me.groupCliente.Name = "groupCliente"
+        Me.groupCliente.Size = New System.Drawing.Size(662, 350)
+        Me.groupCliente.TabIndex = 20
+        Me.groupCliente.TabStop = False
+        Me.groupCliente.Text = "Informacion de Clientee"
         '
         'rfcBox
         '
@@ -332,14 +332,14 @@ Partial Class Form2
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(73, 13)
         Me.Label12.TabIndex = 24
-        Me.Label12.Text = "Correo Cliente"
+        Me.Label12.Text = "Correo Clientee"
         '
-        'correoClienteBox
+        'correoClienteeBox
         '
-        Me.correoClienteBox.Location = New System.Drawing.Point(116, 206)
-        Me.correoClienteBox.Name = "correoClienteBox"
-        Me.correoClienteBox.Size = New System.Drawing.Size(262, 20)
-        Me.correoClienteBox.TabIndex = 6
+        Me.correoClienteeBox.Location = New System.Drawing.Point(116, 206)
+        Me.correoClienteeBox.Name = "correoClienteeBox"
+        Me.correoClienteeBox.Size = New System.Drawing.Size(262, 20)
+        Me.correoClienteeBox.TabIndex = 6
         '
         'Label11
         '
@@ -445,29 +445,29 @@ Partial Class Form2
         Me.Controls.Add(Me.buscarNombre)
         Me.Controls.Add(Me.nuevoButton)
         Me.Controls.Add(Me.cancelarButton)
-        Me.Controls.Add(Me.groupclient)
+        Me.Controls.Add(Me.groupCliente)
         Me.Controls.Add(Me.editarButton)
         Me.Controls.Add(Me.agregarButton)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.idclient)
+        Me.Controls.Add(Me.idCliente)
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.Name = "Form2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Agenda client"
+        Me.Text = "Agenda Cliente"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        CType(Me.clientBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gamboadbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.groupclient.ResumeLayout(False)
-        Me.groupclient.PerformLayout()
+        Me.groupCliente.ResumeLayout(False)
+        Me.groupCliente.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents idclient As System.Windows.Forms.ComboBox
+    Friend WithEvents idCliente As System.Windows.Forms.ComboBox
     Friend WithEvents agregarButton As System.Windows.Forms.Button
     Friend WithEvents gamboadbDataSet As Organzador.gamboadbDataSet
-    Friend WithEvents clientBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents clientTableAdapter As Organzador.gamboadbDataSetTableAdapters.clientTableAdapter
+    Friend WithEvents ClienteBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents ClienteTableAdapter As Organzador.gamboadbDataSetTableAdapters.ClienteTableAdapter
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents editarButton As System.Windows.Forms.Button
     Friend WithEvents cancelarButton As System.Windows.Forms.Button
@@ -483,7 +483,7 @@ Partial Class Form2
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents codigoBox As System.Windows.Forms.TextBox
     Friend WithEvents idBox As System.Windows.Forms.TextBox
-    Friend WithEvents groupclient As System.Windows.Forms.GroupBox
+    Friend WithEvents groupCliente As System.Windows.Forms.GroupBox
     Friend WithEvents nuevoButton As System.Windows.Forms.Button
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents fechaBox As System.Windows.Forms.TextBox
@@ -495,7 +495,7 @@ Partial Class Form2
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents celularBox As System.Windows.Forms.TextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents correoClienteBox As System.Windows.Forms.TextBox
+    Friend WithEvents correoClienteeBox As System.Windows.Forms.TextBox
     Friend WithEvents cotizacionButton As System.Windows.Forms.Button
     Friend WithEvents rfcBox As System.Windows.Forms.TextBox
     Friend WithEvents Label16 As System.Windows.Forms.Label

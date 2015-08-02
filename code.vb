@@ -10,7 +10,7 @@ Imports System.Data
 Imports MySql.Data.MySqlClient
 Module code
 
-    Dim idclient As Object
+    Dim idCliente As Object
 
     Sub agregar_info()
 
@@ -23,7 +23,7 @@ Module code
         command.Connection = con
 
         'Query to insert data
-        command.CommandText = "INSERT INTO client (id_client) VALUES ('" & idclient.Text & "')"
+        command.CommandText = "INSERT INTO Cliente (id_Cliente) VALUES ('" & idCliente.Text & "')"
         command.ExecuteNonQuery()
 
         'End Conection

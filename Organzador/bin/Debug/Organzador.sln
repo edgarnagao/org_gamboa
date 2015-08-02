@@ -21,7 +21,7 @@ Global
 		Debug|x86 = Debug|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{521C3D90-6718-4583-BC99-129A419555B6}.Debug|x86.ActiveCfg = Debug|x86
+		{521C3D90-6718-4583-BC99-129A419555B6}.Debug|x86.ActiveCfg = Debug
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
