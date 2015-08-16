@@ -176,7 +176,7 @@ Public Class Form2
 
         'Conection data
         Dim command As New MySqlCommand
-        Dim con As New MySqlConnection("Server=127.0.0.1;Database=gamboadb;Uid=root;Pwd=asajiro89*;")
+        Dim con As New MySqlConnection("Server=127.0.0.1;Database=gamboadb;Uid=root;Pwd=593274;")
         con.Open()
 
         'Command conection
@@ -254,7 +254,7 @@ Public Class Form2
     Public Sub agegar_info()
         'Conection data
         Dim command As New MySqlCommand
-        Dim con As New MySqlConnection("Server=127.0.0.1;Database=gamboadb;Uid=root;Pwd=asajiro89*;")
+        Dim con As New MySqlConnection("Server=127.0.0.1;Database=gamboadb;Uid=root;Pwd=593274;")
         con.Open()
 
         'Command conection
@@ -285,7 +285,7 @@ Public Class Form2
     Public Sub id_dropdown()
         'Assuming you already have your connection as conn
         Dim command As New MySqlCommand
-        Dim con As New MySqlConnection("Server=127.0.0.1;Database=gamboadb;Uid=root;Pwd=asajiro89*;")
+        Dim con As New MySqlConnection("Server=127.0.0.1;Database=gamboadb;Uid=root;Pwd=593274;")
         Dim READER As MySqlDataReader
 
         'Open connection
@@ -335,7 +335,7 @@ Public Class Form2
 
         'Assuming you already have your connection as conn
         Dim command As New MySqlCommand
-        Dim con As New MySqlConnection("Server=127.0.0.1;Database=gamboadb;Uid=root;Pwd=asajiro89*;")
+        Dim con As New MySqlConnection("Server=127.0.0.1;Database=gamboadb;Uid=root;Pwd=593274;")
         Dim READER As MySqlDataReader
 
         'Open connection
@@ -418,7 +418,7 @@ Public Class Form2
 
         'Conection data
         Dim command As New MySqlCommand
-        Dim con As New MySqlConnection("Server=127.0.0.1;Database=gamboadb;Uid=root;Pwd=asajiro89*;")
+        Dim con As New MySqlConnection("Server=127.0.0.1;Database=gamboadb;Uid=root;Pwd=593274;")
         Dim READER As MySqlDataReader
         con.Open()
 
@@ -493,7 +493,7 @@ Public Class Form2
 
         'Conection data
         Dim command As New MySqlCommand
-        Dim con As New MySqlConnection("Server=127.0.0.1;Database=gamboadb;Uid=root;Pwd=asajiro89*;")
+        Dim con As New MySqlConnection("Server=127.0.0.1;Database=gamboadb;Uid=root;Pwd=593274;")
         con.Open()
 
         'Command conection
@@ -526,7 +526,7 @@ Public Class Form2
 
         'Assuming you already have your connection as conn
         Dim command As New MySqlCommand
-        Dim con As New MySqlConnection("Server=127.0.0.1;Database=gamboadb;Uid=root;Pwd=asajiro89*;")
+        Dim con As New MySqlConnection("Server=127.0.0.1;Database=gamboadb;Uid=root;Pwd=593274;")
         Dim READER As MySqlDataReader
 
         'Open connection
@@ -558,7 +558,7 @@ Public Class Form2
 
         'Conection data
         Dim command As New MySqlCommand
-        Dim con As New MySqlConnection("Server=localhost;Database=gamboadb;Uid=root;Pwd=asajiro89*;")
+        Dim con As New MySqlConnection("Server=localhost;Database=gamboadb;Uid=root;Pwd=593274;")
         Dim READER As MySqlDataReader
         Dim nombresValue
         con.Open()
@@ -634,7 +634,7 @@ Public Class Form2
 
 
     Private Sub cotizacionButton_Click(sender As Object, e As EventArgs) Handles cotizacionButton.Click
-        MsgBox("Realizar cotizacion")
+        Quotation.Show()
     End Sub
 
 
