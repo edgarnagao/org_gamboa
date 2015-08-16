@@ -23,10 +23,10 @@ Public Class Form2
         Call load_name()
 
         'Seleciona 
-        idCliente.Text = "Seleciona"
+        idCliente.Text = "Selecciona"
 
         'Selecciona to nombre dropdown
-        buscarNombre.Text = "Seleciona"
+        buscarNombre.Text = "Selecciona"
 
     End Sub
 
@@ -58,10 +58,10 @@ Public Class Form2
         Call desactivate_fields()
 
         'Put the selectiona 
-        idCliente.Text = "Seleciona"
+        idCliente.Text = "Selecciona"
 
-        'Put seleciona en dorpwdown
-        buscarNombre.Text = "Seleciona"
+        'Put Selecciona en dorpwdown
+        buscarNombre.Text = "Selecciona"
 
         'Add the new id to the dropdown
         Call id_dropdown()
@@ -111,7 +111,7 @@ Public Class Form2
     Private Sub editarButton_Click(sender As Object, e As EventArgs) Handles editarButton.Click
 
         'If not Id send message to add one
-        If idCliente.Text = "Seleciona" And buscarNombre.Text = "Seleciona" Then
+        If idCliente.Text = "Selecciona" And buscarNombre.Text = "Selecciona" Then
             MsgBox("Se tiene que selecionar una ID para editar", MsgBoxStyle.Exclamation = MsgBoxStyle.OkOnly = True, "Sin ID")
             Exit Sub
         End If
@@ -162,7 +162,7 @@ Public Class Form2
         Dim intResponse As Integer
 
         'If not Id send message to add one
-        If idCliente.Text = "Seleciona" And buscarNombre.Text = "Seleciona" Then
+        If idCliente.Text = "Selecciona" And buscarNombre.Text = "Selecciona" Then
             MsgBox("Se tiene que selecionar una ID o Nombre para eliminar el Clientee", MsgBoxStyle.Exclamation = MsgBoxStyle.OkOnly = True, "Ningun Clientee selecionado")
             Exit Sub
         End If
@@ -640,6 +640,9 @@ Public Class Form2
 
 
 
+    Private Sub exitButton_Click(sender As Object, e As EventArgs) Handles exitButton.Click
+        Me.Close()
+    End Sub
 End Class
 
 

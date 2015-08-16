@@ -23,6 +23,7 @@ Partial Class Form3
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.clientButton = New System.Windows.Forms.Button()
+        Me.productsButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'clientButton
@@ -34,16 +35,30 @@ Partial Class Form3
         Me.clientButton.Text = "Clientes"
         Me.clientButton.UseVisualStyleBackColor = True
         '
+        'productsButton
+        '
+        Me.productsButton.Location = New System.Drawing.Point(300, 170)
+        Me.productsButton.Name = "productsButton"
+        Me.productsButton.Size = New System.Drawing.Size(194, 42)
+        Me.productsButton.TabIndex = 1
+        Me.productsButton.Text = "Productos"
+        Me.productsButton.UseVisualStyleBackColor = True
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(795, 382)
+        Me.Controls.Add(Me.productsButton)
         Me.Controls.Add(Me.clientButton)
         Me.Name = "Form3"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Menu Principal"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents clientButton As System.Windows.Forms.Button
+    Friend WithEvents productsButton As System.Windows.Forms.Button
 End Class

@@ -65,6 +65,7 @@ Partial Class Form2
         Me.buscarNombre = New System.Windows.Forms.ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.cotizacionButton = New System.Windows.Forms.Button()
+        Me.exitButton = New System.Windows.Forms.Button()
         CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gamboadbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.groupCliente.SuspendLayout()
@@ -112,7 +113,7 @@ Partial Class Form2
         '
         'editarButton
         '
-        Me.editarButton.Location = New System.Drawing.Point(710, 230)
+        Me.editarButton.Location = New System.Drawing.Point(710, 223)
         Me.editarButton.Name = "editarButton"
         Me.editarButton.Size = New System.Drawing.Size(146, 26)
         Me.editarButton.TabIndex = 18
@@ -121,7 +122,7 @@ Partial Class Form2
         '
         'cancelarButton
         '
-        Me.cancelarButton.Location = New System.Drawing.Point(710, 262)
+        Me.cancelarButton.Location = New System.Drawing.Point(710, 255)
         Me.cancelarButton.Name = "cancelarButton"
         Me.cancelarButton.Size = New System.Drawing.Size(146, 26)
         Me.cancelarButton.TabIndex = 19
@@ -147,7 +148,7 @@ Partial Class Form2
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(27, 29)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(53, 13)
+        Me.Label1.Size = New System.Drawing.Size(59, 13)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "ID Clientee"
         '
@@ -330,7 +331,7 @@ Partial Class Form2
         Me.Label12.AutoSize = True
         Me.Label12.Location = New System.Drawing.Point(116, 190)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(73, 13)
+        Me.Label12.Size = New System.Drawing.Size(79, 13)
         Me.Label12.TabIndex = 24
         Me.Label12.Text = "Correo Clientee"
         '
@@ -400,7 +401,7 @@ Partial Class Form2
         '
         'eliminarButton
         '
-        Me.eliminarButton.Location = New System.Drawing.Point(710, 294)
+        Me.eliminarButton.Location = New System.Drawing.Point(710, 287)
         Me.eliminarButton.Name = "eliminarButton"
         Me.eliminarButton.Size = New System.Drawing.Size(146, 26)
         Me.eliminarButton.TabIndex = 22
@@ -426,12 +427,21 @@ Partial Class Form2
         '
         'cotizacionButton
         '
-        Me.cotizacionButton.Location = New System.Drawing.Point(710, 326)
+        Me.cotizacionButton.Location = New System.Drawing.Point(710, 319)
         Me.cotizacionButton.Name = "cotizacionButton"
         Me.cotizacionButton.Size = New System.Drawing.Size(146, 26)
         Me.cotizacionButton.TabIndex = 23
         Me.cotizacionButton.Text = "Realizar Cotizacion"
         Me.cotizacionButton.UseVisualStyleBackColor = True
+        '
+        'exitButton
+        '
+        Me.exitButton.Location = New System.Drawing.Point(710, 351)
+        Me.exitButton.Name = "exitButton"
+        Me.exitButton.Size = New System.Drawing.Size(146, 26)
+        Me.exitButton.TabIndex = 24
+        Me.exitButton.Text = "Salir"
+        Me.exitButton.UseVisualStyleBackColor = True
         '
         'Form2
         '
@@ -439,6 +449,7 @@ Partial Class Form2
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(1256, 563)
+        Me.Controls.Add(Me.exitButton)
         Me.Controls.Add(Me.cotizacionButton)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.eliminarButton)
@@ -505,4 +516,5 @@ Partial Class Form2
     Friend WithEvents ciudadBox As System.Windows.Forms.TextBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents estadoBox As System.Windows.Forms.TextBox
+    Friend WithEvents exitButton As System.Windows.Forms.Button
 End Class
