@@ -103,10 +103,12 @@ Partial Class Quotation
         '
         'QuoteDataGrid
         '
+        Me.QuoteDataGrid.AllowUserToAddRows = False
+        Me.QuoteDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.QuoteDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.QuoteDataGrid.Location = New System.Drawing.Point(15, 197)
+        Me.QuoteDataGrid.Location = New System.Drawing.Point(15, 172)
         Me.QuoteDataGrid.Name = "QuoteDataGrid"
-        Me.QuoteDataGrid.Size = New System.Drawing.Size(823, 150)
+        Me.QuoteDataGrid.Size = New System.Drawing.Size(906, 255)
         Me.QuoteDataGrid.TabIndex = 8
         '
         'AddProducts

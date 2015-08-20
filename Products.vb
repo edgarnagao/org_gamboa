@@ -4,12 +4,12 @@
     Private _type_prod As String
     Private _description As String
     Private _file_path As String
-    Private _price As Double
-    Private _second_price As Double
-    Private _third_price As Double
-    Private _fourth_price As Double
+    Private _price As String
+    Private _second_price As String
+    Private _third_price As String
+    Private _fourth_price As String
 
-    Public Sub New(ByVal serial_id As Integer, ByVal product As String, ByVal type_prod As String, ByVal description As String, ByVal file_path As String, ByVal price As Double, ByVal secondprice As Double, ByVal thirdprice As Double, ByVal fourthprice As Double)
+    Public Sub New(ByVal serial_id As Integer, ByVal product As String, ByVal type_prod As String, ByVal description As String, ByVal file_path As String, ByVal price As String, ByVal secondprice As String, ByVal thirdprice As String, ByVal fourthprice As String)
         _serial_id = serial_id
         _product = product
         _type_prod = type_prod
@@ -66,38 +66,38 @@
         End Set
     End Property
 
-    Public Property Price() As Double
+    Public Property Price() As String
         Get
             Return _price
         End Get
-        Set(ByVal value As Double)
+        Set(ByVal value As String)
             _price = value
         End Set
     End Property
 
-    Public Property SecondPrice() As Double
+    Public Property SecondPrice() As String
         Get
             Return _second_price
         End Get
-        Set(ByVal value As Double)
+        Set(ByVal value As String)
             _second_price = value
         End Set
     End Property
 
-    Public Property ThirdPrice() As Double
+    Public Property ThirdPrice() As String
         Get
             Return _third_price
         End Get
-        Set(ByVal value As Double)
+        Set(ByVal value As String)
             _third_price = value
         End Set
     End Property
 
-    Public Property FourthPrice() As Double
+    Public Property FourthPrice() As String
         Get
             Return _fourth_price
         End Get
-        Set(ByVal value As Double)
+        Set(ByVal value As String)
             _fourth_price = value
         End Set
     End Property
