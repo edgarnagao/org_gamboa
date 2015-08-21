@@ -1,4 +1,8 @@
-﻿
+﻿Imports System.IO
+Imports System.Data
+Imports System.Reflection
+Imports iTextSharp.text
+Imports iTextSharp.text.pdf
 
 Public Class Quotation
     Dim prodlist = New List(Of Products)
@@ -78,14 +82,18 @@ Public Class Quotation
     End Sub
 
     Private Sub LoadDataGrid(p As Products)
-        If QuoteDataGrid.RowCount >= 4 Then
-            QuoteDataGrid.Rows.RemoveAt(QuoteDataGrid.RowCount - 1)
-            QuoteDataGrid.Rows.RemoveAt(QuoteDataGrid.RowCount - 1)
-            QuoteDataGrid.Rows.RemoveAt(QuoteDataGrid.RowCount - 1)
-        End If
-        Dim qty As Integer
-        Dim precioDescuento As Double
 
+        Dim qty As Integer
+        Dim discount As Double
+        Dim savings As Double
+        Dim originalprice As Double
+
+        If QuoteDataGrid.RowCount >= 4 Then
+            QuoteDataGrid.Rows.RemoveAt(QuoteDataGrid.RowCount - 1) 'remove subtotal record
+            QuoteDataGrid.Rows.RemoveAt(QuoteDataGrid.RowCount - 1) 'remove vat record
+            QuoteDataGrid.Rows.RemoveAt(QuoteDataGrid.RowCount - 1) 'remove total record
+            QuoteDataGrid.Rows.RemoveAt(QuoteDataGrid.RowCount - 1) 'remove savings record
+        End If
 
         If IsNumeric(Quantity.Text) Then
             qty = Double.Parse(Quantity.Text)
@@ -95,30 +103,39 @@ Public Class Quotation
         End If
 
         Dim subTotal As Double
+
         If qty <= 11 Then
-            precioDescuento = Double.Parse(p.Price)
-            subTotal = qty * precioDescuento
+            discount = Double.Parse(p.Price)
+            subTotal = qty * discount
+            savings = 0
         ElseIf 11 < qty < 100 Then
-            precioDescuento = Double.Parse(p.SecondPrice)
-            subTotal = qty * precioDescuento
+            discount = Double.Parse(p.SecondPrice)
+            subTotal = qty * discount
+            savings = originalprice - discount
         ElseIf 100 >= qty < 200 Then
-            precioDescuento = Double.Parse(p.ThirdPrice)
-            subTotal = qty * precioDescuento
+            discount = Double.Parse(p.ThirdPrice)
+            subTotal = qty * discount
+            savings = originalprice - discount
         ElseIf qty >= 200 Then
-            precioDescuento = Double.Parse(p.FourthPrice)
-            subTotal = qty * precioDescuento
+            discount = Double.Parse(p.FourthPrice)
+            subTotal = qty * discount
+            savings = originalprice - discount
         End If
 
         total = total + subTotal
 
-        Dim row As String() = New String() {p.SerialId, p.Product, p.TypeProduct, p.Description, p.FilePath, p.Price, precioDescuento, Quantity.Text, subTotal}
+        Dim row As String() = New String() {p.SerialId, p.Product, p.TypeProduct, p.Description, p.FilePath, p.Price, discount, Quantity.Text, subTotal}
         QuoteDataGrid.Rows.Add(row)
         Dim subrow As String() = New String() {Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, "Subtotal", total}
         Dim vatrow As String() = New String() {Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, "Iva", total * VAT}
         Dim totrow As String() = New String() {Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, "Total", total * 1.16}
+
         QuoteDataGrid.Rows.Add(subrow)
         QuoteDataGrid.Rows.Add(vatrow)
         QuoteDataGrid.Rows.Add(totrow)
+
+        Dim savingsrow As String() = New String() {Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, Nothing, "Tu Ahorro es", savings}
+        QuoteDataGrid.Rows.Add(savingsrow)
     End Sub
 
     Private Sub AddProducts_Click(sender As Object, e As EventArgs) Handles AddProducts.Click
@@ -142,8 +159,68 @@ Public Class Quotation
         End With
     End Sub
 
-    Private Function CalculateVAT(subtotal As Double)
-        Return subtotal * VAT
-    End Function
+    Private Sub CalculateSavings(qty As Integer, p As Products)
+        Dim originalprice As Double
+        Dim discount As Double
+        Dim savings As Double
+
+        originalprice = Double.Parse(p.Price) * qty
+
+        If qty <= 11 Then
+            savings = 0
+        ElseIf 11 < qty < 100 Then
+            discount = Double.Parse(p.SecondPrice) * qty
+            savings = originalprice - discount
+        ElseIf 100 >= qty < 200 Then
+            discount = Double.Parse(p.ThirdPrice) * qty
+            savings = originalprice - discount
+        ElseIf qty >= 200 Then
+            discount = Double.Parse(p.FourthPrice) * qty
+            savings = originalprice - discount
+        End If
+    End Sub
+
+    Private Sub Export_Click(sender As Object, e As EventArgs) Handles Export.Click
+        'Creating iTextSharp Table from the DataTable data
+        Dim pdfTable As New PdfPTable(QuoteDataGrid.ColumnCount)
+        pdfTable.DefaultCell.Padding = 3
+        pdfTable.WidthPercentage = 100
+        pdfTable.HorizontalAlignment = Element.ALIGN_LEFT
+        pdfTable.DefaultCell.BorderWidth = 1
+
+        'Adding Header row
+        For Each column As DataGridViewColumn In QuoteDataGrid.Columns
+            Dim cell As New PdfPCell(New Phrase(column.HeaderText))
+            cell.BackgroundColor = New iTextSharp.text.BaseColor(240, 240, 240)
+            pdfTable.AddCell(cell)
+        Next
+
+        'Adding DataRow
+        For Each row As DataGridViewRow In QuoteDataGrid.Rows
+            For Each cell As DataGridViewCell In row.Cells
+                If IsNothing(cell.Value) Then
+                    cell.Value = ""
+                End If
+                pdfTable.AddCell(cell.Value.ToString())
+
+            Next
+        Next
+
+        'Exporting to PDF
+        Dim folderPath As String = "C:\PDFs\"
+        If Not Directory.Exists(folderPath) Then
+            Directory.CreateDirectory(folderPath)
+        End If
+
+        Dim now = DateTime.Now.ToString("dd.MM.yyyy HH.mm.ss")
+        Using stream As New FileStream(folderPath & "Cotizacion" & now & ".pdf", FileMode.Create)
+            Dim pdfDoc As New Document(PageSize.A2, 10.0F, 10.0F, 10.0F, 0.0F)
+            PdfWriter.GetInstance(pdfDoc, stream)
+            pdfDoc.Open()
+            pdfDoc.Add(pdfTable)
+            pdfDoc.Close()
+            stream.Close()
+        End Using
+    End Sub
 
 End Class

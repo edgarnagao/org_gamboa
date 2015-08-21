@@ -32,6 +32,7 @@ Partial Class Quotation
         Me.QuoteStatus = New System.Windows.Forms.TextBox()
         Me.QuoteDataGrid = New System.Windows.Forms.DataGridView()
         Me.AddProducts = New System.Windows.Forms.Button()
+        Me.Export = New System.Windows.Forms.Button()
         CType(Me.QuoteDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -120,11 +121,21 @@ Partial Class Quotation
         Me.AddProducts.Text = "Agregar Productos"
         Me.AddProducts.UseVisualStyleBackColor = True
         '
+        'Export
+        '
+        Me.Export.Location = New System.Drawing.Point(633, 116)
+        Me.Export.Name = "Export"
+        Me.Export.Size = New System.Drawing.Size(106, 27)
+        Me.Export.TabIndex = 10
+        Me.Export.Text = "Exportar Cotization"
+        Me.Export.UseVisualStyleBackColor = True
+        '
         'Quotation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(933, 439)
+        Me.Controls.Add(Me.Export)
         Me.Controls.Add(Me.AddProducts)
         Me.Controls.Add(Me.QuoteDataGrid)
         Me.Controls.Add(Me.QuoteStatus)
@@ -153,4 +164,5 @@ Partial Class Quotation
     Friend WithEvents QuoteStatus As TextBox
     Friend WithEvents QuoteDataGrid As DataGridView
     Friend WithEvents AddProducts As Button
+    Friend WithEvents Export As Button
 End Class

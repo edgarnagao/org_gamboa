@@ -1,0 +1,5 @@
+1- Extract itextsharp-dll-core
+2- Right click on project name
+3- Add References
+4- Click Browse
+5- Select itextsharp.dll from the folder where the zip file was extracted
