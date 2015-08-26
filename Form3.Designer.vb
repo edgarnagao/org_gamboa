@@ -24,7 +24,11 @@ Partial Class Form3
     Private Sub InitializeComponent()
         Me.clientButton = New System.Windows.Forms.Button()
         Me.productsButton = New System.Windows.Forms.Button()
+<<<<<<< HEAD
         Me.Button1 = New System.Windows.Forms.Button()
+=======
+        Me.QuotationButton = New System.Windows.Forms.Button()
+>>>>>>> f6250416ab4ed4b208467152761ec4f1be713576
         Me.SuspendLayout()
         '
         'clientButton
@@ -45,6 +49,7 @@ Partial Class Form3
         Me.productsButton.Text = "Productos"
         Me.productsButton.UseVisualStyleBackColor = True
         '
+<<<<<<< HEAD
         'Button1
         '
         Me.Button1.Location = New System.Drawing.Point(300, 254)
@@ -53,6 +58,16 @@ Partial Class Form3
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Cotzacion"
         Me.Button1.UseVisualStyleBackColor = True
+=======
+        'QuotationButton
+        '
+        Me.QuotationButton.Location = New System.Drawing.Point(303, 251)
+        Me.QuotationButton.Name = "QuotationButton"
+        Me.QuotationButton.Size = New System.Drawing.Size(194, 42)
+        Me.QuotationButton.TabIndex = 2
+        Me.QuotationButton.Text = "Cotizaciones"
+        Me.QuotationButton.UseVisualStyleBackColor = True
+>>>>>>> f6250416ab4ed4b208467152761ec4f1be713576
         '
         'Form3
         '
@@ -60,7 +75,11 @@ Partial Class Form3
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(795, 382)
+<<<<<<< HEAD
         Me.Controls.Add(Me.Button1)
+=======
+        Me.Controls.Add(Me.QuotationButton)
+>>>>>>> f6250416ab4ed4b208467152761ec4f1be713576
         Me.Controls.Add(Me.productsButton)
         Me.Controls.Add(Me.clientButton)
         Me.Name = "Form3"
@@ -72,5 +91,9 @@ Partial Class Form3
     End Sub
     Friend WithEvents clientButton As System.Windows.Forms.Button
     Friend WithEvents productsButton As System.Windows.Forms.Button
+<<<<<<< HEAD
     Friend WithEvents Button1 As System.Windows.Forms.Button
+=======
+    Friend WithEvents QuotationButton As Button
+>>>>>>> f6250416ab4ed4b208467152761ec4f1be713576
 End Class

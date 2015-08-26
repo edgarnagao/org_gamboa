@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Quotation
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Quotation
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.ProductsCombo = New System.Windows.Forms.ComboBox()
         Me.Quantity = New System.Windows.Forms.TextBox()
@@ -33,13 +33,15 @@ Partial Class Quotation
         Me.QuoteDataGrid = New System.Windows.Forms.DataGridView()
         Me.AddProducts = New System.Windows.Forms.Button()
         Me.Export = New System.Windows.Forms.Button()
+        Me.Reset = New System.Windows.Forms.Button()
+        Me.ExitForm = New System.Windows.Forms.Button()
         CType(Me.QuoteDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ProductsCombo
         '
         Me.ProductsCombo.FormattingEnabled = True
-        Me.ProductsCombo.Location = New System.Drawing.Point(12, 122)
+        Me.ProductsCombo.Location = New System.Drawing.Point(12, 123)
         Me.ProductsCombo.Name = "ProductsCombo"
         Me.ProductsCombo.Size = New System.Drawing.Size(150, 21)
         Me.ProductsCombo.TabIndex = 0
@@ -71,7 +73,7 @@ Partial Class Quotation
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 103)
+        Me.Label2.Location = New System.Drawing.Point(12, 107)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(50, 13)
         Me.Label2.TabIndex = 4
@@ -130,11 +132,31 @@ Partial Class Quotation
         Me.Export.Text = "Exportar Cotization"
         Me.Export.UseVisualStyleBackColor = True
         '
+        'Reset
+        '
+        Me.Reset.Location = New System.Drawing.Point(756, 117)
+        Me.Reset.Name = "Reset"
+        Me.Reset.Size = New System.Drawing.Size(75, 27)
+        Me.Reset.TabIndex = 11
+        Me.Reset.Text = "Limpiar"
+        Me.Reset.UseVisualStyleBackColor = True
+        '
+        'ExitForm
+        '
+        Me.ExitForm.Location = New System.Drawing.Point(846, 119)
+        Me.ExitForm.Name = "ExitForm"
+        Me.ExitForm.Size = New System.Drawing.Size(75, 26)
+        Me.ExitForm.TabIndex = 12
+        Me.ExitForm.Text = "Salir"
+        Me.ExitForm.UseVisualStyleBackColor = True
+        '
         'Quotation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(933, 439)
+        Me.Controls.Add(Me.ExitForm)
+        Me.Controls.Add(Me.Reset)
         Me.Controls.Add(Me.Export)
         Me.Controls.Add(Me.AddProducts)
         Me.Controls.Add(Me.QuoteDataGrid)
@@ -166,4 +188,6 @@ Partial Class Quotation
     Friend WithEvents QuoteDataGrid As DataGridView
     Friend WithEvents AddProducts As Button
     Friend WithEvents Export As Button
+    Friend WithEvents Reset As Button
+    Friend WithEvents ExitForm As Button
 End Class
