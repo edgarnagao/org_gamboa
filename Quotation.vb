@@ -46,10 +46,11 @@ Public Class Quotation
         ProductsCombo.DisplayMember = "product"
 
         For Each row As DataRow In tblproducts.Rows
-            Dim p As String
-            Dim sp As String
-            Dim tp As String
+            Dim p 'As String
+            Dim sp 'As String
+            Dim tp 'As String
             Dim fp As String
+            Dim filepath As String
 
             If IsDBNull(row("price")) Then
                 p = Nothing
@@ -75,7 +76,13 @@ Public Class Quotation
                 fp = row("fourth_price")
             End If
 
-            Dim prod = New Products(row("serial_id"), row("product"), row("type_prod"), row("description"), row("file_path"), p, sp, tp, fp)
+            If IsDBNull(row("file_path")) Then
+                filepath = Nothing
+            Else
+                filepath = row("file_path")
+            End If
+
+            Dim prod = New Products(row("serial_id"), row("product"), row("type_prod"), row("description"), filepath, p, sp, tp, fp)
             prodlist.Add(prod)
         Next row
 

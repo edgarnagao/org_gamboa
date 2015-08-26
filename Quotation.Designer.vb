@@ -147,7 +147,8 @@ Partial Class Quotation
         Me.Controls.Add(Me.Quantity)
         Me.Controls.Add(Me.ProductsCombo)
         Me.Name = "Quotation"
-        Me.Text = "Quotation"
+        Me.Text = "Ctizaciones"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.QuoteDataGrid, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -111,7 +111,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="itextsharp">
-      <HintPath>..\..\..\Downloads\itextsharp-all-5.5.6\itextsharp-dll-core\itextsharp.dll</HintPath>
+      <HintPath>..\..\..\..\Downloads\itextsharp-dll-core\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />

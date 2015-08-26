@@ -409,6 +409,7 @@ Partial Class FormProducts
         Me.Controls.Add(Me.idProductoBox)
         Me.Name = "FormProducts"
         Me.Text = "Productos"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
