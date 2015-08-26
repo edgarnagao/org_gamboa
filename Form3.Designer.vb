@@ -24,6 +24,7 @@ Partial Class Form3
     Private Sub InitializeComponent()
         Me.clientButton = New System.Windows.Forms.Button()
         Me.productsButton = New System.Windows.Forms.Button()
+        Me.QuotationButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'clientButton
@@ -44,12 +45,22 @@ Partial Class Form3
         Me.productsButton.Text = "Productos"
         Me.productsButton.UseVisualStyleBackColor = True
         '
+        'QuotationButton
+        '
+        Me.QuotationButton.Location = New System.Drawing.Point(303, 251)
+        Me.QuotationButton.Name = "QuotationButton"
+        Me.QuotationButton.Size = New System.Drawing.Size(194, 42)
+        Me.QuotationButton.TabIndex = 2
+        Me.QuotationButton.Text = "Cotizaciones"
+        Me.QuotationButton.UseVisualStyleBackColor = True
+        '
         'Form3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.ClientSize = New System.Drawing.Size(795, 382)
+        Me.Controls.Add(Me.QuotationButton)
         Me.Controls.Add(Me.productsButton)
         Me.Controls.Add(Me.clientButton)
         Me.Name = "Form3"
@@ -61,4 +72,5 @@ Partial Class Form3
     End Sub
     Friend WithEvents clientButton As System.Windows.Forms.Button
     Friend WithEvents productsButton As System.Windows.Forms.Button
+    Friend WithEvents QuotationButton As Button
 End Class

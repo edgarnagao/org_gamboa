@@ -9,4 +9,8 @@
         FormProducts.Show()
 
     End Sub
+
+    Private Sub Quotation_Click(sender As Object, e As EventArgs) Handles QuotationButton.Click
+        Quotation.Show()
+    End Sub
 End Class

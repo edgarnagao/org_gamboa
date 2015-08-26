@@ -37,19 +37,20 @@ Public Class Quotation
         Dim mydb As New mySqlDB
         Dim dataset As New DataSet
         Dim tblproducts As New DataTable
-        Dim GETALLPRODUCTS As String = "select p.serial_id, p.product, p.type_prod, p.description, p.file_path, p.price, p.second_price, p.third_price, p.fourth_price from products p"
+        Dim GETALLPRODUCTS As String = "select p.serial_id, p.product, p.type_prod, p.description, p.file_path, p.price, p.second_price, p.third_price, p.fourth_price, CONCAT(p.serial_id, ' - ' ,p.product) AS DisplayField from products p"
         Dim queryresult As String = ""
         dataset = mydb.executeSQL_dset(GETALLPRODUCTS, queryresult)
         tblproducts = dataset.Tables(0)
         ProductsCombo.DataSource = dataset.Tables(0)
         ProductsCombo.ValueMember = "serial_id"
-        ProductsCombo.DisplayMember = "product"
+        ProductsCombo.DisplayMember = "DisplayField"
 
         For Each row As DataRow In tblproducts.Rows
             Dim p As String
             Dim sp As String
             Dim tp As String
             Dim fp As String
+            Dim filepath As String
 
             If IsDBNull(row("price")) Then
                 p = Nothing
@@ -75,7 +76,13 @@ Public Class Quotation
                 fp = row("fourth_price")
             End If
 
-            Dim prod = New Products(row("serial_id"), row("product"), row("type_prod"), row("description"), row("file_path"), p, sp, tp, fp)
+            If IsDBNull(row("file_path")) Then
+                filepath = Nothing
+            Else
+                filepath = row("file_path")
+            End If
+
+            Dim prod = New Products(row("serial_id"), row("product"), row("type_prod"), row("description"), filepath, p, sp, tp, fp)
             prodlist.Add(prod)
         Next row
 
@@ -141,6 +148,7 @@ Public Class Quotation
     Private Sub AddProducts_Click(sender As Object, e As EventArgs) Handles AddProducts.Click
         'Add selected item to the grid
         Call LoadDataGrid(prodlist.item(ProductsCombo.SelectedIndex))
+        Quantity.Text = Nothing
     End Sub
 
     Private Sub InitGrid()
@@ -217,10 +225,21 @@ Public Class Quotation
             Dim pdfDoc As New Document(PageSize.A2, 10.0F, 10.0F, 10.0F, 0.0F)
             PdfWriter.GetInstance(pdfDoc, stream)
             pdfDoc.Open()
+            pdfDoc.AddTitle("Productos Gamboa")
+            pdfDoc.AddHeader("Encabezado", "Atencion a:" & ClientsCombo.GetItemText(ClientsCombo.SelectedItem))
             pdfDoc.Add(pdfTable)
             pdfDoc.Close()
             stream.Close()
         End Using
+        MsgBox("El archivo fue creado exitosamente en la siguiente ruta: " & folderPath & "Cotizacion" & now & ".pdf")
     End Sub
 
+    Private Sub Reset_Click(sender As Object, e As EventArgs) Handles Reset.Click
+        QuoteDataGrid.Rows.Clear()
+        Quantity.Text = Nothing
+    End Sub
+
+    Private Sub ExitForm_Click(sender As Object, e As EventArgs) Handles ExitForm.Click
+        Me.Close()
+    End Sub
 End Class
