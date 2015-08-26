@@ -41,14 +41,14 @@ Partial Class Quotation
         'ProductsCombo
         '
         Me.ProductsCombo.FormattingEnabled = True
-        Me.ProductsCombo.Location = New System.Drawing.Point(12, 123)
+        Me.ProductsCombo.Location = New System.Drawing.Point(15, 123)
         Me.ProductsCombo.Name = "ProductsCombo"
         Me.ProductsCombo.Size = New System.Drawing.Size(150, 21)
         Me.ProductsCombo.TabIndex = 0
         '
         'Quantity
         '
-        Me.Quantity.Location = New System.Drawing.Point(203, 123)
+        Me.Quantity.Location = New System.Drawing.Point(206, 124)
         Me.Quantity.Name = "Quantity"
         Me.Quantity.Size = New System.Drawing.Size(115, 20)
         Me.Quantity.TabIndex = 1
@@ -73,7 +73,7 @@ Partial Class Quotation
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 107)
+        Me.Label2.Location = New System.Drawing.Point(12, 108)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(50, 13)
         Me.Label2.TabIndex = 4
@@ -82,7 +82,7 @@ Partial Class Quotation
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(203, 103)
+        Me.Label3.Location = New System.Drawing.Point(203, 108)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(49, 13)
         Me.Label3.TabIndex = 5
@@ -91,7 +91,7 @@ Partial Class Quotation
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(366, 103)
+        Me.Label4.Location = New System.Drawing.Point(366, 108)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(40, 13)
         Me.Label4.TabIndex = 6
@@ -99,7 +99,7 @@ Partial Class Quotation
         '
         'QuoteStatus
         '
-        Me.QuoteStatus.Location = New System.Drawing.Point(369, 122)
+        Me.QuoteStatus.Location = New System.Drawing.Point(369, 124)
         Me.QuoteStatus.Name = "QuoteStatus"
         Me.QuoteStatus.Size = New System.Drawing.Size(96, 20)
         Me.QuoteStatus.TabIndex = 7
@@ -125,7 +125,7 @@ Partial Class Quotation
         '
         'Export
         '
-        Me.Export.Location = New System.Drawing.Point(633, 116)
+        Me.Export.Location = New System.Drawing.Point(617, 116)
         Me.Export.Name = "Export"
         Me.Export.Size = New System.Drawing.Size(106, 27)
         Me.Export.TabIndex = 10
@@ -134,18 +134,18 @@ Partial Class Quotation
         '
         'Reset
         '
-        Me.Reset.Location = New System.Drawing.Point(756, 117)
+        Me.Reset.Location = New System.Drawing.Point(729, 116)
         Me.Reset.Name = "Reset"
-        Me.Reset.Size = New System.Drawing.Size(75, 27)
+        Me.Reset.Size = New System.Drawing.Size(75, 28)
         Me.Reset.TabIndex = 11
         Me.Reset.Text = "Limpiar"
         Me.Reset.UseVisualStyleBackColor = True
         '
         'ExitForm
         '
-        Me.ExitForm.Location = New System.Drawing.Point(846, 119)
+        Me.ExitForm.Location = New System.Drawing.Point(810, 116)
         Me.ExitForm.Name = "ExitForm"
-        Me.ExitForm.Size = New System.Drawing.Size(75, 26)
+        Me.ExitForm.Size = New System.Drawing.Size(75, 28)
         Me.ExitForm.TabIndex = 12
         Me.ExitForm.Text = "Salir"
         Me.ExitForm.UseVisualStyleBackColor = True

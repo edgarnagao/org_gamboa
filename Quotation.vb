@@ -15,6 +15,11 @@ Public Class Quotation
         Call LoadCustomers()
         'Load Products
         Call LoadProducts()
+
+        'Add "Selecciona" to combo box
+        ProductsCombo.Text = "Selecciona"
+        ClientsCombo.Text = "Selecciona"
+
         'Test DataGrid
         QuoteStatus.Text = "Nueva"
         QuoteStatus.Enabled = False
@@ -102,12 +107,23 @@ Public Class Quotation
             QuoteDataGrid.Rows.RemoveAt(QuoteDataGrid.RowCount - 1) 'remove savings record
         End If
 
+        'Validate the quantity is not empty
         If IsNumeric(Quantity.Text) Then
             qty = Double.Parse(Quantity.Text)
+        ElseIf Quantity.Text = Nothing Then
+            MsgBox("Se tiene que ingresar la cantidad de producto")
+            Exit Sub
         Else
             MsgBox("El campo Cantidad solo acepta numeros")
             Exit Sub
         End If
+
+        'Validate the product is selected
+        If ProductsCombo.Text = "Selecciona" Then
+            MsgBox("Se debe seleccionar un producto para agregar a la cotizacion")
+            Exit Sub
+        End If
+
 
         Dim subTotal As Double
 
@@ -118,15 +134,15 @@ Public Class Quotation
         ElseIf 11 < qty < 100 Then
             discount = Double.Parse(p.SecondPrice)
             subTotal = qty * discount
-            savings = originalprice - discount
+            savings = discount - originalprice
         ElseIf 100 >= qty < 200 Then
             discount = Double.Parse(p.ThirdPrice)
             subTotal = qty * discount
-            savings = originalprice - discount
+            savings = discount - originalprice
         ElseIf qty >= 200 Then
             discount = Double.Parse(p.FourthPrice)
             subTotal = qty * discount
-            savings = originalprice - discount
+            savings = discount - originalprice
         End If
 
         total = total + subTotal
@@ -148,7 +164,14 @@ Public Class Quotation
     Private Sub AddProducts_Click(sender As Object, e As EventArgs) Handles AddProducts.Click
         'Add selected item to the grid
         Call LoadDataGrid(prodlist.item(ProductsCombo.SelectedIndex))
+
+        'Clear the quantity textbox
         Quantity.Text = Nothing
+
+        'Add "Selecciona" to combo box
+        ProductsCombo.Text = "Selecciona"
+        ClientsCombo.Text = "Selecciona"
+
     End Sub
 
     Private Sub InitGrid()
@@ -178,13 +201,13 @@ Public Class Quotation
             savings = 0
         ElseIf 11 < qty < 100 Then
             discount = Double.Parse(p.SecondPrice) * qty
-            savings = originalprice - discount
+            savings = discount - originalprice
         ElseIf 100 >= qty < 200 Then
             discount = Double.Parse(p.ThirdPrice) * qty
-            savings = originalprice - discount
+            savings = discount - originalprice
         ElseIf qty >= 200 Then
             discount = Double.Parse(p.FourthPrice) * qty
-            savings = originalprice - discount
+            savings = discount - originalprice
         End If
     End Sub
 
