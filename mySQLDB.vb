@@ -47,6 +47,28 @@ Public Class mySqlDB
         Return dt
     End Function
 
+    Public Function GetQuotationID() As Integer
+
+        Dim last_id As Integer = 0
+        conn = New MySqlConnection
+
+        Try
+            conn.ConnectionString = connString
+            conn.Open()
+            Dim sComm As New MySqlCommand
+            sComm.CommandText = "SELECT LAST_INSERT_ID()"
+            sComm.Connection = conn
+            last_id = CInt(sComm.ExecuteScalar())
+            conn.Close()
+        Catch ex As Exception
+            If (conn.State = Data.ConnectionState.Open) Then
+                conn.Close()
+            End If
+        End Try
+        conn = Nothing
+        Return last_id
+    End Function
+
     Public Function executeDMLSQL(ByVal sSql As String, ByRef sResult As String) As Integer
 
         Dim sReturn As String = ""
@@ -192,5 +214,42 @@ Public Class mySqlDB
             'MsgBox(ex.ToString) 'Errorbar.Text = Errorbar.Text + " Email not Sent ..!"
         End Try
     End Sub
+
+    Public Function insertQuotation(ByVal client_id As String) As Integer
+
+        Dim sReturn As String = ""
+        Dim irows As Integer = 0
+        conn = New MySqlConnection
+
+        Dim insertStmt = "INSERT INTO `gamboadb`.`quotations`" &
+                         "(`client_id`," &
+                         "`status_id`," &
+                         "`creation_date`," &
+                         "`last_update`)" &
+                         "VALUES" &
+                         "(@client_id, " &
+                         "@status_id," &
+                         "CURRENT_TIMESTAMP," &
+                         "CURRENT_TIMESTAMP)"
+
+        Try
+            conn.ConnectionString = connString
+            conn.Open()
+            Dim sComm As New MySqlCommand
+            sComm.CommandText = insertStmt
+            sComm.Parameters.AddWithValue("@client_id", client_id)
+            sComm.Parameters.AddWithValue("@status_id", 1) 'New Quotation = 1
+            sComm.Connection = conn
+            irows = sComm.ExecuteNonQuery()
+            conn.Close()
+        Catch ex As Exception
+            If (conn.State = Data.ConnectionState.Open) Then
+                conn.Close()
+            End If
+        End Try
+
+        conn = Nothing
+        Return irows
+    End Function
 
 End Class

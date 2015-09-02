@@ -265,4 +265,32 @@ Public Class Quotation
     Private Sub ExitForm_Click(sender As Object, e As EventArgs) Handles ExitForm.Click
         Me.Close()
     End Sub
+
+    Private Sub Save_Quotation()
+
+    End Sub
+
+    Private Sub Save_Quotation_Products()
+        Dim mydb As New mySqlDB
+        Dim result As String = ""
+        mydb.insertQuotation(ClientsCombo.SelectedValue)
+
+        mydb.executeSQL("select last_insert_id()", result)
+
+    End Sub
+
+    Private Sub Save_Click(sender As Object, e As EventArgs) Handles Save.Click
+        Dim mydb As New mySqlDB
+        mydb.insertQuotation(ClientsCombo.SelectedValue)
+        MsgBox(mydb.GetQuotationID())
+    End Sub
+
+    Private Sub DeleteProduct_Click(sender As Object, e As EventArgs) Handles DeleteProduct.Click
+        For Each row As DataGridViewRow In QuoteDataGrid.SelectedRows
+            QuoteDataGrid.Rows.Remove(row)
+            'QuoteDataGrid.Rows.RemoveAt(QuoteDataGrid.SelectedRows) 
+
+        Next
+        QuoteDataGrid.Refresh()
+    End Sub
 End Class

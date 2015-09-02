@@ -35,6 +35,8 @@ Partial Class Quotation
         Me.Export = New System.Windows.Forms.Button()
         Me.Reset = New System.Windows.Forms.Button()
         Me.ExitForm = New System.Windows.Forms.Button()
+        Me.Save = New System.Windows.Forms.Button()
+        Me.DeleteProduct = New System.Windows.Forms.Button()
         CType(Me.QuoteDataGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -125,16 +127,16 @@ Partial Class Quotation
         '
         'Export
         '
-        Me.Export.Location = New System.Drawing.Point(617, 116)
+        Me.Export.Location = New System.Drawing.Point(733, 116)
         Me.Export.Name = "Export"
-        Me.Export.Size = New System.Drawing.Size(106, 27)
+        Me.Export.Size = New System.Drawing.Size(110, 26)
         Me.Export.TabIndex = 10
         Me.Export.Text = "Exportar Cotization"
         Me.Export.UseVisualStyleBackColor = True
         '
         'Reset
         '
-        Me.Reset.Location = New System.Drawing.Point(729, 116)
+        Me.Reset.Location = New System.Drawing.Point(632, 68)
         Me.Reset.Name = "Reset"
         Me.Reset.Size = New System.Drawing.Size(75, 28)
         Me.Reset.TabIndex = 11
@@ -143,18 +145,38 @@ Partial Class Quotation
         '
         'ExitForm
         '
-        Me.ExitForm.Location = New System.Drawing.Point(810, 116)
+        Me.ExitForm.Location = New System.Drawing.Point(749, 68)
         Me.ExitForm.Name = "ExitForm"
         Me.ExitForm.Size = New System.Drawing.Size(75, 28)
         Me.ExitForm.TabIndex = 12
         Me.ExitForm.Text = "Salir"
         Me.ExitForm.UseVisualStyleBackColor = True
         '
+        'Save
+        '
+        Me.Save.Location = New System.Drawing.Point(514, 68)
+        Me.Save.Name = "Save"
+        Me.Save.Size = New System.Drawing.Size(75, 28)
+        Me.Save.TabIndex = 13
+        Me.Save.Text = "Guardar"
+        Me.Save.UseVisualStyleBackColor = True
+        '
+        'DeleteProduct
+        '
+        Me.DeleteProduct.Location = New System.Drawing.Point(617, 116)
+        Me.DeleteProduct.Name = "DeleteProduct"
+        Me.DeleteProduct.Size = New System.Drawing.Size(110, 26)
+        Me.DeleteProduct.TabIndex = 14
+        Me.DeleteProduct.Text = "Borrar Producto"
+        Me.DeleteProduct.UseVisualStyleBackColor = True
+        '
         'Quotation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(933, 439)
+        Me.Controls.Add(Me.DeleteProduct)
+        Me.Controls.Add(Me.Save)
         Me.Controls.Add(Me.ExitForm)
         Me.Controls.Add(Me.Reset)
         Me.Controls.Add(Me.Export)
@@ -190,4 +212,6 @@ Partial Class Quotation
     Friend WithEvents Export As Button
     Friend WithEvents Reset As Button
     Friend WithEvents ExitForm As Button
+    Friend WithEvents Save As Button
+    Friend WithEvents DeleteProduct As Button
 End Class
