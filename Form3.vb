@@ -17,7 +17,11 @@
 
     End Sub
 
-    Private Sub quoteButton_Click(sender As Object, e As EventArgs) Handles quoteButton.Click
-        Quotation.Show()
+    Private Sub proveedoresButton_Click(sender As Object, e As EventArgs) Handles proveedoresButton.Click
+        Proveedores.Show()
+    End Sub
+
+    Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
+
     End Sub
 End Class

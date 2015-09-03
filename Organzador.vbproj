@@ -145,6 +145,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dealers.Designer.vb">
+      <DependentUpon>dealers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dealers.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="QuotGrid.vb" />
     <Compile Include="Products.vb" />
     <Compile Include="code.vb" />
@@ -196,6 +202,9 @@
     <Compile Include="Variables.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="dealers.resx">
+      <DependentUpon>dealers.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -260,6 +269,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\gamboa2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\titulo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\madera.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

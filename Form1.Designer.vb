@@ -58,6 +58,7 @@ Partial Class FormProducts
         Me.Label3 = New System.Windows.Forms.Label()
         Me.typeBox = New System.Windows.Forms.TextBox()
         Me.saveModification = New System.Windows.Forms.Button()
+        Me.exitButton = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
@@ -385,11 +386,21 @@ Partial Class FormProducts
         Me.saveModification.Text = "Guardar Modificacion "
         Me.saveModification.UseVisualStyleBackColor = True
         '
+        'exitButton
+        '
+        Me.exitButton.Location = New System.Drawing.Point(504, 229)
+        Me.exitButton.Name = "exitButton"
+        Me.exitButton.Size = New System.Drawing.Size(146, 26)
+        Me.exitButton.TabIndex = 37
+        Me.exitButton.Text = "Salir"
+        Me.exitButton.UseVisualStyleBackColor = True
+        '
         'FormProducts
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(973, 581)
+        Me.Controls.Add(Me.exitButton)
         Me.Controls.Add(Me.saveModification)
         Me.Controls.Add(Me.typeBox)
         Me.Controls.Add(Me.Label3)
@@ -455,4 +466,5 @@ Partial Class FormProducts
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents typeBox As System.Windows.Forms.TextBox
     Friend WithEvents saveModification As System.Windows.Forms.Button
+    Friend WithEvents exitButton As System.Windows.Forms.Button
 End Class
